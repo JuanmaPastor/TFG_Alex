@@ -5,17 +5,18 @@ Created on Sat Feb 29 17:01:56 2020
 @author: alech
 """
 
-import os
-import shutil
-
 import pandas as pd
 
-def read():
+#-----------------------------------------------------------------------------
+#--------FUNCIONES DE LECTURA Y SOPORTE DE LOS DATAFRAMES---------------------
+#-----------------------------------------------------------------------------
+
+def read():                                                                    #Lectura del excel con los datos de "Clinical" y convertir índices
     df = pd.read_excel("metadata-cancer-pulmon2.xlsx")
     df=df.set_index("sample")
     return df
 
-def parts():
+def parts():                                                                   #Establecer el númeor de archivos que se quieren juntar
     Number = input("""Decida cuantos archivos quiere unir
                
                Introduzca un número: """)
@@ -28,7 +29,7 @@ def parts():
         return Number
                
 
-def read_parts():
+def read_parts():                                                              #Lectura de los Excels tras ser divididos anteriormente
     Number = parts()
     Pre_frames = [0]*Number
     for i in(0, Number-1):
@@ -38,27 +39,33 @@ def read_parts():
         Pre_frames[i] = dp
     return Pre_frames
 
+# -----------------------------------------------------------------------------
+#-------------FUNCIONES PARA JUNTAR LAS TABLAS---------------------------------
+#------------------------------------------------------------------------------
 
-def Joiner():
+def Joiner():                                                                  #Traspone las tablas divididas y les añade la columna "Clinical"
     df = read()
     Pre_frames = read_parts()
     frames = [0] * len(Pre_frames)
     
-    for i in (0,len(Pre_frames)-1):           #Hata aquí va bien
+    for i in (0,len(Pre_frames)-1):           
         dl = Pre_frames[i].T
         dl.columns=dl.iloc[0]
-        ozo=dl.drop(index="TAXA")
-        gf=ozo.index
+        post_dl=dl.drop(index="TAXA")
+        indices=post_dl.index
     
-        topo=df.loc[gf, ["Clinical"]]
-        ozo["Clinical"] = topo
-        frames[i]=ozo
+        ref = df.loc[indices, ["Clinical"]]
+        post_dl["Clinical"] = ref
+        frames[i]=post_dl
         
     return frames
 
-def Glue():
+def Glue():                                                                    #Concatena los Dataframes
     frames = Joiner()
     joined = pd.concat(frames)
     joined.to_excel("Joined.xlsx")
 
-Glue() 
+def main():
+    Glue() 
+
+main()
