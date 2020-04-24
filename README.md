@@ -7,3 +7,5 @@ Por el momento cuenta con un Reader_Steiner.py para separar los pacientes sanos 
 También tiene un Joiner_Steiner.py que permite quitar bacterias con la cantidad de valores nulos que especifique el usuario, unir tablas y añadir a las bacterias la columna de Clinical para un posterior análisis.
 
 El Frequence_Steiner.py convierte los valores de las columnas en frecuencias.
+
+La carpeta log_mean_var contiene un archivo .ipynb y varios excel donde se puede ver la relación que existe entre el log de la media de las bacterias con respecto al log de la varianza
