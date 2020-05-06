@@ -13,3 +13,5 @@ La carpeta log_mean_var contiene un archivo .ipynb y varios excel donde se puede
 
 La carpeta log_mean_var contiene un archivo .ipynb y varios excel donde se puede ver que la media relativa de las bacterias sigue una distribución Log_Normal
 
+El archivo Orange_Cancer.ows se abre con Orange.biolab (se puede encontrar dentro de Anaconda) y permite realizar varios análisis de aprendizaje automático con los archivos generados por el Multi_Joiner.py
+
