@@ -10,3 +10,6 @@ El Multi_Joiner.py es la versión con interfaz gráfica del Joiner.py
 El Frequence_Steiner.py convierte los valores de las columnas en frecuencias y cuenta con una interfaz gráfica.
 
 La carpeta log_mean_var contiene un archivo .ipynb y varios excel donde se puede ver la relación que existe entre el log de la media de las bacterias con respecto al log de la varianza
+
+La carpeta log_mean_var contiene un archivo .ipynb y varios excel donde se puede ver que la media relativa de las bacterias sigue una distribución Log_Normal
+
