@@ -11,7 +11,7 @@ El Frequence_Steiner.py convierte los valores de las columnas en frecuencias y c
 
 La carpeta log_mean_var contiene un archivo .ipynb y varios excel donde se puede ver la relación que existe entre el log de la media de las bacterias con respecto al log de la varianza
 
-La carpeta log_mean_var contiene un archivo .ipynb y varios excel donde se puede ver que la media relativa de las bacterias sigue una distribución Log_Normal
+La carpeta log_normal contiene un archivo .ipynb y varios excel donde se puede ver que la media relativa de las bacterias sigue una distribución Log_Normal
 
 El archivo Orange_Cancer.ows se abre con Orange.biolab (se puede encontrar dentro de Anaconda) y permite realizar varios análisis de aprendizaje automático con los archivos generados por el Multi_Joiner.py
 
